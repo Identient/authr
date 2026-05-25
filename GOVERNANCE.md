@@ -8,7 +8,7 @@ This document describes how AuthR is currently maintained and how decisions get 
 
 ## Current editor
 
-**Steve Tout** ([@stevetout](https://github.com/stevetout)) — Founder & CEO, [Identient](https://identient.com).
+**Steve Tout** ([@stevetout](https://github.com/Identient)) — Founder & CEO, [Identient](https://identient.com).
 
 The editor is responsible for:
 
