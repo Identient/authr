@@ -1,0 +1,120 @@
+[
+  {
+    "authr_id": "urn:authr:89976ae1-dddf-4283-8933-7a66e77b9420",
+    "version": "0.1",
+    "issued_at": "2026-05-25T00:08:22Z",
+    "expires_at": "2026-05-25T00:38:22Z",
+    "author": {
+      "id": "did:web:example.com:people:alice",
+      "type": "verified_human",
+      "grounding": {
+        "referent_type": "verified_human",
+        "verifier": "example-hrms",
+        "evidence_digest": "sha256:abc123def456",
+        "verified_at": "2026-04-20T14:02:10Z"
+      },
+      "role": "CFO",
+      "display_name": "Alice (CFO)"
+    },
+    "actor": {
+      "id": "spiffe://example.com/agents/treasury-orchestrator",
+      "type": "orchestrator"
+    },
+    "intent": {
+      "purpose": "approve_wire_transfer",
+      "statement": "Release Q2 supplier payment per approved schedule",
+      "risk_tier": "high",
+      "human_in_the_loop": true
+    },
+    "scope": {
+      "actions": [
+        "wire.prepare",
+        "wire.validate",
+        "wire.approve",
+        "wire.submit"
+      ],
+      "resources": [
+        "account:opex-7788"
+      ],
+      "constraints": {
+        "max_amount": 250000.0,
+        "currency": "USD",
+        "max_delegation_depth": 2
+      }
+    },
+    "provenance": {
+      "chain": [],
+      "correlation_id": "corr-d424d261-b8c1-4624-901e-6fd7bfa573e4"
+    },
+    "drift": {
+      "confidence": 0.95,
+      "stale_after": "2026-05-25T00:38:22Z"
+    },
+    "signature": {
+      "alg": "EdDSA",
+      "kid": "test-vector-key-1",
+      "value": "0F0WOFVXg3b6R9FsTv8SWFz52aHMW-JCj-oSn4ZIgizGi4dVSSmhF6kJzvZA6LRymM8thcvZqwMKrArZ0R5TCw"
+    }
+  },
+  {
+    "authr_id": "urn:authr:635cabc2-c6fb-4a6f-bc60-725d4714b9a9",
+    "version": "0.1",
+    "issued_at": "2026-05-25T00:08:22Z",
+    "expires_at": "2026-05-25T00:38:22Z",
+    "author": {
+      "id": "did:web:example.com:people:alice",
+      "type": "verified_human",
+      "grounding": {
+        "referent_type": "verified_human",
+        "verifier": "example-hrms",
+        "evidence_digest": "sha256:abc123def456",
+        "verified_at": "2026-04-20T14:02:10Z"
+      },
+      "role": "CFO",
+      "display_name": "Alice (CFO)"
+    },
+    "actor": {
+      "id": "spiffe://example.com/agents/validator",
+      "type": "agent"
+    },
+    "intent": {
+      "purpose": "approve_wire_transfer",
+      "statement": "Release Q2 supplier payment per approved schedule",
+      "risk_tier": "high",
+      "human_in_the_loop": true
+    },
+    "scope": {
+      "actions": [
+        "wire.prepare",
+        "wire.validate"
+      ],
+      "resources": [
+        "account:opex-7788"
+      ],
+      "constraints": {
+        "max_amount": 250000.0,
+        "currency": "USD",
+        "max_delegation_depth": 2
+      }
+    },
+    "provenance": {
+      "chain": [
+        {
+          "authr_id": "urn:authr:89976ae1-dddf-4283-8933-7a66e77b9420",
+          "depth": 1,
+          "issuer": "test-vector-key-1"
+        }
+      ],
+      "correlation_id": "corr-d424d261-b8c1-4624-901e-6fd7bfa573e4"
+    },
+    "drift": {
+      "confidence": 0.9,
+      "stale_after": "2026-05-25T00:38:22Z"
+    },
+    "signature": {
+      "alg": "EdDSA",
+      "kid": "test-vector-key-1",
+      "value": "iKJwxRsGkG5mnHK7aKONBojfv9cvOxRkUhk4WR54bpb3Uor9Ef3kIxWAKDoxF0KKFjc5zTC9pyWENe1ncHEsAw"
+    }
+  }
+]
