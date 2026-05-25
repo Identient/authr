@@ -7,7 +7,7 @@
 [![Version: v0.1](https://img.shields.io/badge/Version-0.1-purple.svg)]()
 [![Reference: Python](https://img.shields.io/badge/Reference-Python-yellow.svg)](reference/python)
 
-> *"We've spent twenty years solving AuthN and AuthZ. The next ten will be about AuthR — who actually authored the decision."*
+> _"We've spent twenty years solving AuthN and AuthZ. The next ten will be about AuthR — who actually authored the decision."_
 
 ---
 
@@ -15,16 +15,16 @@
 
 Identity and Access Management has historically answered two questions:
 
-- **AuthN** asks *who you are.*
-- **AuthZ** asks *what you may do.*
+- **AuthN** asks _who you are._
+- **AuthZ** asks _what you may do._
 
 Both were designed for a world where a human sits at a terminal, signs in, and directly invokes a system. That world is ending.
 
-Autonomous agents, AI workers, synthetic personas, and verified digital twins now act across time, systems, and teams on behalf of people and organizations. They compose. They re-plan. They chain tools. They run overnight. When something goes wrong — or right — the question that matters is no longer *who signed in,* nor *what scope did the token carry.* The question is:
+Autonomous agents, AI workers, synthetic personas, and verified digital twins now act across time, systems, and teams on behalf of people and organizations. They compose. They re-plan. They chain tools. They run overnight. When something goes wrong — or right — the question that matters is no longer _who signed in,_ nor _what scope did the token carry._ The question is:
 
 **Who is ultimately responsible for this action?**
 
-**AuthR** — Authorship Representation — proposes the third pillar of identity. Where OAuth's On-Behalf-Of pattern delegates *access,* AuthR delegates *authorship:* it carries grounded responsibility, intent, and lineage across the entire execution graph of agentic work. AuthR does not replace OAuth, SAML, OIDC, or UMA. It sits above them.
+**AuthR** — Authorship Representation — proposes the third pillar of identity. Where OAuth's On-Behalf-Of pattern delegates _access,_ AuthR delegates _authorship:_ it carries grounded responsibility, intent, and lineage across the entire execution graph of agentic work. AuthR does not replace OAuth, SAML, OIDC, or UMA. It sits above them.
 
 ## Status
 
@@ -62,14 +62,14 @@ Verifier(trust_store={"treasury-twin-key-1": ia.public_key}).verify_record(root)
 
 ## The six primitives
 
-| Primitive | What it carries | Why it matters |
-|---|---|---|
-| **Author** | The grounded human, twin, or committee whose judgment is executed | Separates authorship from execution — the structural move that makes responsibility provable |
-| **Actor** | The agent, AI worker, or tool that actually runs the code | Bound to a measured model manifest and runtime attestation |
-| **Intent** | The *why* — canonical purpose, natural-language statement, risk tier, HITL flag | Inherited across hops, never reinvented; makes intent drift legible |
-| **Scope** | Explicit limits — actions, resources, monetary caps, time windows, max delegation depth | Attenuates monotonically across the chain |
-| **Provenance** | The lineage — chain of parent record IDs, correlation ID, data sources consulted | Without it, authorship is a claim with nothing behind it |
-| **Drift** | Confidence at decision time, stale-after timestamp, observed deviation signals | A record that is not drift-aware is not really governed — it is hopeful |
+| Primitive      | What it carries                                                                         | Why it matters                                                                               |
+| -------------- | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| **Author**     | The grounded human, twin, or committee whose judgment is executed                       | Separates authorship from execution — the structural move that makes responsibility provable |
+| **Actor**      | The agent, AI worker, or tool that actually runs the code                               | Bound to a measured model manifest and runtime attestation                                   |
+| **Intent**     | The _why_ — canonical purpose, natural-language statement, risk tier, HITL flag         | Inherited across hops, never reinvented; makes intent drift legible                          |
+| **Scope**      | Explicit limits — actions, resources, monetary caps, time windows, max delegation depth | Attenuates monotonically across the chain                                                    |
+| **Provenance** | The lineage — chain of parent record IDs, correlation ID, data sources consulted        | Without it, authorship is a claim with nothing behind it                                     |
+| **Drift**      | Confidence at decision time, stale-after timestamp, observed deviation signals          | A record that is not drift-aware is not really governed — it is hopeful                      |
 
 ## The six invariants
 
@@ -96,15 +96,15 @@ See [docs/architecture.md](docs/architecture.md) for the full model.
 
 ## Relationship to existing standards
 
-| Standard | Role | How AuthR relates |
-|---|---|---|
-| OAuth 2.0 / OIDC | Authentication and access token issuance | Used unchanged. AuthR rides alongside as an additional assertion. |
-| RFC 8693 Token Exchange | Cross-domain delegation of access | AuthR's *extend* is the authorship analogue. Both can be used together. |
-| RFC 9396 Rich Authorization Requests | Fine-grained permissions | AuthR `scope.constraints` can reference or embed RAR `authorization_details`. |
-| UMA 2.0 | User-managed access | UMA grants access; AuthR declares responsibility for the action taken. |
-| W3C Verifiable Credentials / DIDs | Portable identity assertions | Natural fit for `author.id` and `grounding.evidence_digest`. |
-| SPIFFE / SPIRE | Workload identity | Natural fit for `actor.id` and attestation evidence. |
-| CoSAI Agentic IAM | Agents as first-class identities | AuthR is the authorship layer above the agent identity layer CoSAI defines. |
+| Standard                             | Role                                     | How AuthR relates                                                             |
+| ------------------------------------ | ---------------------------------------- | ----------------------------------------------------------------------------- |
+| OAuth 2.0 / OIDC                     | Authentication and access token issuance | Used unchanged. AuthR rides alongside as an additional assertion.             |
+| RFC 8693 Token Exchange              | Cross-domain delegation of access        | AuthR's _extend_ is the authorship analogue. Both can be used together.       |
+| RFC 9396 Rich Authorization Requests | Fine-grained permissions                 | AuthR `scope.constraints` can reference or embed RAR `authorization_details`. |
+| UMA 2.0                              | User-managed access                      | UMA grants access; AuthR declares responsibility for the action taken.        |
+| W3C Verifiable Credentials / DIDs    | Portable identity assertions             | Natural fit for `author.id` and `grounding.evidence_digest`.                  |
+| SPIFFE / SPIRE                       | Workload identity                        | Natural fit for `actor.id` and attestation evidence.                          |
+| CoSAI Agentic IAM                    | Agents as first-class identities         | AuthR is the authorship layer above the agent identity layer CoSAI defines.   |
 
 See [docs/related-work.md](docs/related-work.md) for the longer treatment.
 
@@ -156,4 +156,4 @@ https://github.com/identient/authr
 
 ---
 
-*Trust is expensive. So is its absence.*
+_Trust is expensive. So is its absence._

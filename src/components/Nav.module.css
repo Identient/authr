@@ -1,0 +1,207 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-header);
+  backdrop-filter: blur(12px);
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logoMark {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -.02em;
+}
+
+.logoVersion {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+/* ── Desktop nav ────────────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  gap: 0;
+}
+
+.link {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: color .15s, background .15s;
+}
+
+.link:hover {
+  color: var(--text);
+  background: var(--bg-card);
+}
+
+.active {
+  color: var(--accent) !important;
+}
+
+/* ── Right-side actions ─────────────────────────────────────────────── */
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.themeToggle {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color .15s, border-color .15s, background .15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.themeToggle:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--bg-card-hover);
+}
+
+/* ── Burger button (desktop: hidden) ────────────────────────────────── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 7px 8px;
+  transition: border-color .15s, background .15s;
+}
+
+.burger:hover {
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.burgerLine {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--text-muted);
+  border-radius: 2px;
+  transition: transform .22s ease, opacity .22s ease;
+}
+
+.burgerOpen1 { transform: translateY(7px) rotate(45deg); }
+.burgerOpen2 { opacity: 0; transform: scaleX(0); }
+.burgerOpen3 { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile dropdown menu ────────────────────────────────────────────── */
+.mobileMenu {
+  border-top: 1px solid var(--border);
+  background: var(--bg-header);
+  backdrop-filter: blur(12px);
+  padding: 8px 0 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileLink {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 11px 20px;
+  transition: color .15s, background .15s;
+}
+
+.mobileLink:hover {
+  color: var(--text);
+  background: var(--bg-card);
+}
+
+.mobileLinkActive {
+  color: var(--accent) !important;
+}
+
+.mobileDivider {
+  height: 1px;
+  background: var(--border);
+  margin: 8px 20px;
+}
+
+.mobileThemeBtn {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 11px 20px;
+  text-align: left;
+  width: 100%;
+  transition: color .15s, background .15s;
+}
+
+.mobileThemeBtn:hover {
+  color: var(--text);
+  background: var(--bg-card);
+}
+
+/* ── Tap-outside overlay ─────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: transparent;
+}
+
+/* ── Mobile breakpoint ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .inner {
+    padding: 0 1.25rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .themeToggle {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+}
